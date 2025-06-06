@@ -12,19 +12,19 @@ const Navbar = () => {
         <Link href="/">
           <Image src="/logo.png" alt="logo" width={144} height={30} />
         </Link>
-        <div className=" flex items-center gap-5">
+        <div className=" flex items-center gap-5 text-black">
           {session && session?.user ? (
-            <div>
+            <>
               <Link href="/startup/create">
                 <span>Create</span>
               </Link>
-              <button onClick={() => signOut()}>
+              <button onClick={() => signOut({ callbackUrl: "/" })}>
                 <span>Logout</span>
               </button>
               <Link href={`/user/${session?.user?.id}`}>
                 <span>{session?.user?.name}</span>
               </Link>
-            </div>
+            </>
           ) : (
             <button onClick={() => signIn("github")}>
               <span>Login</span>
