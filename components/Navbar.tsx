@@ -18,7 +18,7 @@ const Navbar = () => {
               <Link href="/startup/create">
                 <span>Create</span>
               </Link>
-              <button onClick={() => signOut({ callbackUrl: "/" })}>
+              <button className=" cursor-pointer" onClick={() => signOut({ callbackUrl: "/" })}>
                 <span>Logout</span>
               </button>
               <Link href={`/user/${session?.user?.id}`}>
@@ -26,7 +26,7 @@ const Navbar = () => {
               </Link>
             </>
           ) : (
-            <button onClick={() => signIn("github")}>
+            <button className=" cursor-pointer" onClick={() => signIn("github")}>
               <span>Login</span>
             </button>
           )}
