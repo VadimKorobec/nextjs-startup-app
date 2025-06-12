@@ -12,13 +12,16 @@ const Navbar = () => {
         <Link href="/">
           <Image src="/logo.png" alt="logo" width={144} height={30} />
         </Link>
-        <div className=" flex items-center gap-5 text-black">
+        <div className=" flex items-center text-black gap-5">
           {session && session?.user ? (
             <>
               <Link href="/startup/create">
                 <span>Create</span>
               </Link>
-              <button className=" cursor-pointer" onClick={() => signOut({ callbackUrl: "/" })}>
+              <button
+                className=" cursor-pointer"
+                onClick={() => signOut({ callbackUrl: "/" })}
+              >
                 <span>Logout</span>
               </button>
               <Link href={`/user/${session?.user?.id}`}>
@@ -26,7 +29,10 @@ const Navbar = () => {
               </Link>
             </>
           ) : (
-            <button className=" cursor-pointer" onClick={() => signIn("github")}>
+            <button
+              className=" cursor-pointer"
+              onClick={() => signIn("github")}
+            >
               <span>Login</span>
             </button>
           )}
